@@ -1,0 +1,810 @@
+(edif alu 
+ (edifVersion 2 0 0)
+ (edifLevel 0)
+ (keywordMap (keywordLevel 0))
+ (status 
+  (written 
+   (timestamp 2020 02 28 18 50 45)
+   (program "LeonardoSpectrum Level 3" (version "2009a.6"))
+   (author "Mentor Graphics")))
+ (external PRIMITIVES 
+  (edifLevel 0)
+  (technology (numberDefinition ))
+  (cell XOR2 (cellType GENERIC)
+   (view INTERFACE  (viewType NETLIST)
+    (interface 
+     (port (rename in_0_ "in[0]") (direction INPUT))
+     (port (rename in_1_ "in[1]") (direction INPUT))
+     (port out (direction OUTPUT)))))
+  (cell XNOR2 (cellType GENERIC)
+   (view INTERFACE  (viewType NETLIST)
+    (interface 
+     (port (rename in_0_ "in[0]") (direction INPUT))
+     (port (rename in_1_ "in[1]") (direction INPUT))
+     (port out (direction OUTPUT)))))
+  (cell INV (cellType GENERIC)
+   (view INTERFACE  (viewType NETLIST)
+    (interface 
+     (port in (direction INPUT))
+     (port out (direction OUTPUT)))))
+  (cell AND2 (cellType GENERIC)
+   (view INTERFACE  (viewType NETLIST)
+    (interface 
+     (port (rename in_0_ "in[0]") (direction INPUT))
+     (port (rename in_1_ "in[1]") (direction INPUT))
+     (port out (direction OUTPUT)))))
+  (cell OR2 (cellType GENERIC)
+   (view INTERFACE  (viewType NETLIST)
+    (interface 
+     (port (rename in_0_ "in[0]") (direction INPUT))
+     (port (rename in_1_ "in[1]") (direction INPUT))
+     (port out (direction OUTPUT))))))
+ (library ami05_typ 
+  (edifLevel 0)
+  (technology (numberDefinition ))
+  (cell (rename xor2_rename "xor2") (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "2.120000"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef XOR2 (libraryRef PRIMITIVES ))))
+     (net A0 
+      (joined 
+       (portRef A0 )
+       (portRef in_0_ (instanceRef ix1 ))))
+     (net A1 
+      (joined 
+       (portRef A1 )
+       (portRef in_1_ (instanceRef ix1 ))))
+     (net nx0 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix1 )))))))
+  (cell (rename xnor2_rename "xnor2") (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "1.910000"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef XNOR2 (libraryRef PRIMITIVES ))))
+     (net A0 
+      (joined 
+       (portRef A0 )
+       (portRef in_0_ (instanceRef ix1 ))))
+     (net A1 
+      (joined 
+       (portRef A1 )
+       (portRef in_1_ (instanceRef ix1 ))))
+     (net nx0 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix1 )))))))
+  (cell mux21_ni (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port S0 (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "1.810000"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix3 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix5 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix7 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (net A0 
+      (joined 
+       (portRef A0 )
+       (portRef in_0_ (instanceRef ix3 ))))
+     (net A1 
+      (joined 
+       (portRef A1 )
+       (portRef in_0_ (instanceRef ix5 ))))
+     (net S0 
+      (joined 
+       (portRef S0 )
+       (portRef in (instanceRef ix1 ))
+       (portRef in_1_ (instanceRef ix5 ))))
+     (net NOT_S0 
+      (joined 
+       (portRef out (instanceRef ix1 ))
+       (portRef in_1_ (instanceRef ix3 ))))
+     (net nx2 
+      (joined 
+       (portRef out (instanceRef ix3 ))
+       (portRef in_0_ (instanceRef ix7 ))))
+     (net nx4 
+      (joined 
+       (portRef out (instanceRef ix5 ))
+       (portRef in_1_ (instanceRef ix7 ))))
+     (net nx6 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix7 )))))))
+  (cell nand02_2x (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "1.000000"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix3 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix5 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (net A0 
+      (joined 
+       (portRef A0 )
+       (portRef in (instanceRef ix3 ))))
+     (net A1 
+      (joined 
+       (portRef A1 )
+       (portRef in (instanceRef ix1 ))))
+     (net NOT_A1 
+      (joined 
+       (portRef out (instanceRef ix1 ))
+       (portRef in_0_ (instanceRef ix5 ))))
+     (net NOT_A0 
+      (joined 
+       (portRef out (instanceRef ix3 ))
+       (portRef in_1_ (instanceRef ix5 ))))
+     (net nx4 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix5 )))))))
+  (cell inv02 (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "0.760000"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (net A 
+      (joined 
+       (portRef A )
+       (portRef in (instanceRef ix1 ))))
+     (net NOT_A 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix1 )))))))
+  (cell ao21 (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port B0 (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "1.070000"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix3 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (net A0 
+      (joined 
+       (portRef A0 )
+       (portRef in_0_ (instanceRef ix1 ))))
+     (net A1 
+      (joined 
+       (portRef A1 )
+       (portRef in_1_ (instanceRef ix1 ))))
+     (net B0 
+      (joined 
+       (portRef B0 )
+       (portRef in_1_ (instanceRef ix3 ))))
+     (net nx0 
+      (joined 
+       (portRef out (instanceRef ix1 ))
+       (portRef in_0_ (instanceRef ix3 ))))
+     (net nx2 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix3 )))))))
+  (cell nor03 (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port A2 (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "1.020000"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix3 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix5 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix7 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix9 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (net A0 
+      (joined 
+       (portRef A0 )
+       (portRef in (instanceRef ix1 ))))
+     (net A1 
+      (joined 
+       (portRef A1 )
+       (portRef in (instanceRef ix3 ))))
+     (net A2 
+      (joined 
+       (portRef A2 )
+       (portRef in (instanceRef ix7 ))))
+     (net NOT_A0 
+      (joined 
+       (portRef out (instanceRef ix1 ))
+       (portRef in_0_ (instanceRef ix5 ))))
+     (net NOT_A1 
+      (joined 
+       (portRef out (instanceRef ix3 ))
+       (portRef in_1_ (instanceRef ix5 ))))
+     (net nx4 
+      (joined 
+       (portRef out (instanceRef ix5 ))
+       (portRef in_0_ (instanceRef ix9 ))))
+     (net NOT_A2 
+      (joined 
+       (portRef out (instanceRef ix7 ))
+       (portRef in_1_ (instanceRef ix9 ))))
+     (net nx8 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix9 )))))))
+  (cell nor02ii (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "1.242400"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix3 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (net A0 
+      (joined 
+       (portRef A0 )
+       (portRef in (instanceRef ix1 ))))
+     (net A1 
+      (joined 
+       (portRef A1 )
+       (portRef in_1_ (instanceRef ix3 ))))
+     (net NOT_A0 
+      (joined 
+       (portRef out (instanceRef ix1 ))
+       (portRef in_0_ (instanceRef ix3 ))))
+     (net nx2 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix3 )))))))
+  (cell aoi32 (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port A2 (direction INPUT))
+     (port B0 (direction INPUT))
+     (port B1 (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "1.730000"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix3 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix5 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix7 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix9 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix11 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (instance ix13 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix15 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix17 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (instance ix19 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix21 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix23 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (instance ix25 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix27 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (instance ix29 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix31 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (net A0 
+      (joined 
+       (portRef A0 )
+       (portRef in (instanceRef ix13 ))))
+     (net A1 
+      (joined 
+       (portRef A1 )
+       (portRef in (instanceRef ix7 ))))
+     (net A2 
+      (joined 
+       (portRef A2 )
+       (portRef in (instanceRef ix1 ))))
+     (net B0 
+      (joined 
+       (portRef B0 )
+       (portRef in (instanceRef ix19 ))))
+     (net B1 
+      (joined 
+       (portRef B1 )
+       (portRef in (instanceRef ix3 ))))
+     (net NOT_A2 
+      (joined 
+       (portRef out (instanceRef ix1 ))
+       (portRef in_0_ (instanceRef ix5 ))
+       (portRef in_0_ (instanceRef ix21 ))))
+     (net NOT_B1 
+      (joined 
+       (portRef out (instanceRef ix3 ))
+       (portRef in_1_ (instanceRef ix5 ))
+       (portRef in_1_ (instanceRef ix9 ))
+       (portRef in_1_ (instanceRef ix15 ))))
+     (net nx4 
+      (joined 
+       (portRef out (instanceRef ix5 ))
+       (portRef in_0_ (instanceRef ix11 ))))
+     (net NOT_A1 
+      (joined 
+       (portRef out (instanceRef ix7 ))
+       (portRef in_0_ (instanceRef ix9 ))
+       (portRef in_0_ (instanceRef ix25 ))))
+     (net nx8 
+      (joined 
+       (portRef out (instanceRef ix9 ))
+       (portRef in_1_ (instanceRef ix11 ))))
+     (net nx10 
+      (joined 
+       (portRef out (instanceRef ix11 ))
+       (portRef in_0_ (instanceRef ix17 ))))
+     (net NOT_A0 
+      (joined 
+       (portRef out (instanceRef ix13 ))
+       (portRef in_0_ (instanceRef ix15 ))
+       (portRef in_0_ (instanceRef ix29 ))))
+     (net nx14 
+      (joined 
+       (portRef out (instanceRef ix15 ))
+       (portRef in_1_ (instanceRef ix17 ))))
+     (net nx16 
+      (joined 
+       (portRef out (instanceRef ix17 ))
+       (portRef in_0_ (instanceRef ix23 ))))
+     (net NOT_B0 
+      (joined 
+       (portRef out (instanceRef ix19 ))
+       (portRef in_1_ (instanceRef ix21 ))
+       (portRef in_1_ (instanceRef ix25 ))
+       (portRef in_1_ (instanceRef ix29 ))))
+     (net nx20 
+      (joined 
+       (portRef out (instanceRef ix21 ))
+       (portRef in_1_ (instanceRef ix23 ))))
+     (net nx22 
+      (joined 
+       (portRef out (instanceRef ix23 ))
+       (portRef in_0_ (instanceRef ix27 ))))
+     (net nx24 
+      (joined 
+       (portRef out (instanceRef ix25 ))
+       (portRef in_1_ (instanceRef ix27 ))))
+     (net nx26 
+      (joined 
+       (portRef out (instanceRef ix27 ))
+       (portRef in_0_ (instanceRef ix31 ))))
+     (net nx28 
+      (joined 
+       (portRef out (instanceRef ix29 ))
+       (portRef in_1_ (instanceRef ix31 ))))
+     (net nx30 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix31 )))))))
+  (cell aoi22 (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A0 (direction INPUT))
+     (port A1 (direction INPUT))
+     (port B0 (direction INPUT))
+     (port B1 (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "1.480000"))
+    (contents 
+     (instance ix1 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix3 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix5 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix7 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix9 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix11 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (instance ix13 (viewRef INTERFACE  (cellRef INV (libraryRef PRIMITIVES ))))
+     (instance ix15 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix17 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (instance ix19 (viewRef INTERFACE  (cellRef AND2 (libraryRef PRIMITIVES ))))
+     (instance ix21 (viewRef INTERFACE  (cellRef OR2 (libraryRef PRIMITIVES ))))
+     (net A0 
+      (joined 
+       (portRef A0 )
+       (portRef in (instanceRef ix7 ))))
+     (net A1 
+      (joined 
+       (portRef A1 )
+       (portRef in (instanceRef ix1 ))))
+     (net B0 
+      (joined 
+       (portRef B0 )
+       (portRef in (instanceRef ix13 ))))
+     (net B1 
+      (joined 
+       (portRef B1 )
+       (portRef in (instanceRef ix3 ))))
+     (net NOT_A1 
+      (joined 
+       (portRef out (instanceRef ix1 ))
+       (portRef in_0_ (instanceRef ix5 ))
+       (portRef in_0_ (instanceRef ix15 ))))
+     (net NOT_B1 
+      (joined 
+       (portRef out (instanceRef ix3 ))
+       (portRef in_1_ (instanceRef ix5 ))
+       (portRef in_1_ (instanceRef ix9 ))))
+     (net nx4 
+      (joined 
+       (portRef out (instanceRef ix5 ))
+       (portRef in_0_ (instanceRef ix11 ))))
+     (net NOT_A0 
+      (joined 
+       (portRef out (instanceRef ix7 ))
+       (portRef in_0_ (instanceRef ix9 ))
+       (portRef in_0_ (instanceRef ix19 ))))
+     (net nx8 
+      (joined 
+       (portRef out (instanceRef ix9 ))
+       (portRef in_1_ (instanceRef ix11 ))))
+     (net nx10 
+      (joined 
+       (portRef out (instanceRef ix11 ))
+       (portRef in_0_ (instanceRef ix17 ))))
+     (net NOT_B0 
+      (joined 
+       (portRef out (instanceRef ix13 ))
+       (portRef in_1_ (instanceRef ix15 ))
+       (portRef in_1_ (instanceRef ix19 ))))
+     (net nx14 
+      (joined 
+       (portRef out (instanceRef ix15 ))
+       (portRef in_1_ (instanceRef ix17 ))))
+     (net nx16 
+      (joined 
+       (portRef out (instanceRef ix17 ))
+       (portRef in_0_ (instanceRef ix21 ))))
+     (net nx18 
+      (joined 
+       (portRef out (instanceRef ix19 ))
+       (portRef in_1_ (instanceRef ix21 ))))
+     (net nx20 
+      (joined 
+       (portRef Y )
+       (portRef out (instanceRef ix21 )))))))
+  (cell buf02 (cellType GENERIC)
+   (view NETLIST  (viewType NETLIST)
+    (interface 
+     (port A (direction INPUT))
+     (port Y (direction OUTPUT)))
+    (property AREA (string "1.020000"))
+    (contents 
+     (net A 
+      (joined 
+       (portRef A )
+       (portRef Y )))))))
+ (library work 
+  (edifLevel 0)
+  (technology (numberDefinition ))
+  (cell alu (cellType GENERIC)
+   (view INTERFACE  (viewType NETLIST)
+    (interface 
+     (port c (direction INPUT))
+     (port (rename ia_3_ "ia(3)") (direction INPUT))
+     (port (rename ia_2_ "ia(2)") (direction INPUT))
+     (port (rename ia_1_ "ia(1)") (direction INPUT))
+     (port (rename ia_0_ "ia(0)") (direction INPUT))
+     (port (rename ib_3_ "ib(3)") (direction INPUT))
+     (port (rename ib_2_ "ib(2)") (direction INPUT))
+     (port (rename ib_1_ "ib(1)") (direction INPUT))
+     (port (rename ib_0_ "ib(0)") (direction INPUT))
+     (port (rename sum_3_ "sum(3)") (direction OUTPUT))
+     (port (rename sum_2_ "sum(2)") (direction OUTPUT))
+     (port (rename sum_1_ "sum(1)") (direction OUTPUT))
+     (port (rename sum_0_ "sum(0)") (direction OUTPUT))
+     (port cout (direction OUTPUT)))
+    (contents 
+     (instance ix153 (viewRef NETLIST  (cellRef xor2_rename (libraryRef ami05_typ ))))
+     (instance ix151 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix198 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
+     (instance ix200 (viewRef NETLIST  (cellRef nand02_2x (libraryRef ami05_typ ))))
+     (instance ix202 (viewRef NETLIST  (cellRef inv02 (libraryRef ami05_typ ))))
+     (instance ix111 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix109 (viewRef NETLIST  (cellRef ao21 (libraryRef ami05_typ ))))
+     (instance ix103 (viewRef NETLIST  (cellRef nor03 (libraryRef ami05_typ ))))
+     (instance ix207 (viewRef NETLIST  (cellRef nor02ii (libraryRef ami05_typ ))))
+     (instance ix27 (viewRef NETLIST  (cellRef nor02ii (libraryRef ami05_typ ))))
+     (instance ix85 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix83 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
+     (instance ix79 (viewRef NETLIST  (cellRef xor2_rename (libraryRef ami05_typ ))))
+     (instance ix17 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix214 (viewRef NETLIST  (cellRef nand02_2x (libraryRef ami05_typ ))))
+     (instance ix149 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix217 (viewRef NETLIST  (cellRef aoi32 (libraryRef ami05_typ ))))
+     (instance ix65 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix63 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
+     (instance ix59 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix223 (viewRef NETLIST  (cellRef aoi22 (libraryRef ami05_typ ))))
+     (instance ix225 (viewRef NETLIST  (cellRef inv02 (libraryRef ami05_typ ))))
+     (instance ix9 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix228 (viewRef NETLIST  (cellRef nand02_2x (libraryRef ami05_typ ))))
+     (instance ix147 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix231 (viewRef NETLIST  (cellRef aoi32 (libraryRef ami05_typ ))))
+     (instance ix45 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix43 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
+     (instance ix39 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix237 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
+     (instance ix37 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix240 (viewRef NETLIST  (cellRef nand02_2x (libraryRef ami05_typ ))))
+     (instance ix145 (viewRef NETLIST  (cellRef xnor2_rename (libraryRef ami05_typ ))))
+     (instance ix243 (viewRef NETLIST  (cellRef aoi32 (libraryRef ami05_typ ))))
+     (instance ix247 (viewRef NETLIST  (cellRef aoi22 (libraryRef ami05_typ ))))
+     (instance ix249 (viewRef NETLIST  (cellRef inv02 (libraryRef ami05_typ ))))
+     (instance ix127 (viewRef NETLIST  (cellRef inv02 (libraryRef ami05_typ ))))
+     (instance ix123 (viewRef NETLIST  (cellRef inv02 (libraryRef ami05_typ ))))
+     (instance ix119 (viewRef NETLIST  (cellRef inv02 (libraryRef ami05_typ ))))
+     (instance ix254 (viewRef NETLIST  (cellRef buf02 (libraryRef ami05_typ ))))
+     (instance ix256 (viewRef NETLIST  (cellRef inv02 (libraryRef ami05_typ ))))
+     (instance ix143 (viewRef NETLIST  (cellRef nor02ii (libraryRef ami05_typ ))))
+     (net c 
+      (joined 
+       (portRef c )
+       (portRef A (instanceRef ix202 ))
+       (portRef S0 (instanceRef ix83 ))
+       (portRef S0 (instanceRef ix63 ))
+       (portRef S0 (instanceRef ix43 ))
+       (portRef A (instanceRef ix256 ))
+       (portRef A1 (instanceRef ix143 ))))
+     (net (rename ia_3_ "ia(3)") 
+      (joined 
+       (portRef ia_3_ )
+       (portRef A0 (instanceRef ix43 ))
+       (portRef A1 (instanceRef ix37 ))
+       (portRef A2 (instanceRef ix243 ))
+       (portRef A0 (instanceRef ix247 ))))
+     (net (rename ia_2_ "ia(2)") 
+      (joined 
+       (portRef ia_2_ )
+       (portRef A0 (instanceRef ix63 ))
+       (portRef A1 (instanceRef ix9 ))
+       (portRef A2 (instanceRef ix231 ))
+       (portRef A0 (instanceRef ix237 ))))
+     (net (rename ia_1_ "ia(1)") 
+      (joined 
+       (portRef ia_1_ )
+       (portRef A0 (instanceRef ix83 ))
+       (portRef A1 (instanceRef ix17 ))
+       (portRef A2 (instanceRef ix217 ))
+       (portRef A (instanceRef ix225 ))))
+     (net (rename ia_0_ "ia(0)") 
+      (joined 
+       (portRef ia_0_ )
+       (portRef A0 (instanceRef ix153 ))
+       (portRef A1 (instanceRef ix109 ))
+       (portRef A1 (instanceRef ix207 ))
+       (portRef A0 (instanceRef ix27 ))))
+     (net (rename ib_3_ "ib(3)") 
+      (joined 
+       (portRef ib_3_ )
+       (portRef A0 (instanceRef ix37 ))
+       (portRef A0 (instanceRef ix240 ))
+       (portRef A0 (instanceRef ix243 ))
+       (portRef A (instanceRef ix249 ))))
+     (net (rename ib_2_ "ib(2)") 
+      (joined 
+       (portRef ib_2_ )
+       (portRef A0 (instanceRef ix9 ))
+       (portRef A0 (instanceRef ix228 ))
+       (portRef A0 (instanceRef ix231 ))))
+     (net (rename ib_1_ "ib(1)") 
+      (joined 
+       (portRef ib_1_ )
+       (portRef A0 (instanceRef ix17 ))
+       (portRef A0 (instanceRef ix214 ))
+       (portRef A0 (instanceRef ix217 ))
+       (portRef A1 (instanceRef ix223 ))))
+     (net (rename ib_0_ "ib(0)") 
+      (joined 
+       (portRef ib_0_ )
+       (portRef A1 (instanceRef ix153 ))
+       (portRef A0 (instanceRef ix200 ))
+       (portRef A0 (instanceRef ix207 ))
+       (portRef A1 (instanceRef ix27 ))))
+     (net cout 
+      (joined 
+       (portRef cout )
+       (portRef Y (instanceRef ix145 ))))
+     (net (rename sum_3_ "sum(3)") 
+      (joined 
+       (portRef sum_3_ )
+       (portRef Y (instanceRef ix147 ))))
+     (net (rename sum_2_ "sum(2)") 
+      (joined 
+       (portRef sum_2_ )
+       (portRef Y (instanceRef ix149 ))))
+     (net (rename sum_1_ "sum(1)") 
+      (joined 
+       (portRef sum_1_ )
+       (portRef Y (instanceRef ix151 ))))
+     (net (rename sum_0_ "sum(0)") 
+      (joined 
+       (portRef sum_0_ )
+       (portRef Y (instanceRef ix153 ))))
+     (net nx8 
+      (joined 
+       (portRef Y (instanceRef ix9 ))
+       (portRef A1 (instanceRef ix59 ))
+       (portRef S0 (instanceRef ix237 ))))
+     (net nx16 
+      (joined 
+       (portRef Y (instanceRef ix17 ))
+       (portRef A1 (instanceRef ix79 ))
+       (portRef B1 (instanceRef ix223 ))))
+     (net nx26 
+      (joined 
+       (portRef Y (instanceRef ix27 ))
+       (portRef A (instanceRef ix254 ))))
+     (net nx36 
+      (joined 
+       (portRef Y (instanceRef ix37 ))
+       (portRef A1 (instanceRef ix39 ))
+       (portRef B1 (instanceRef ix247 ))))
+     (net nx38 
+      (joined 
+       (portRef Y (instanceRef ix39 ))
+       (portRef A1 (instanceRef ix43 ))))
+     (net nx42 
+      (joined 
+       (portRef Y (instanceRef ix43 ))
+       (portRef A0 (instanceRef ix45 ))))
+     (net nx44 
+      (joined 
+       (portRef Y (instanceRef ix45 ))
+       (portRef A1 (instanceRef ix147 ))
+       (portRef B1 (instanceRef ix243 ))))
+     (net nx58 
+      (joined 
+       (portRef Y (instanceRef ix59 ))
+       (portRef A1 (instanceRef ix63 ))))
+     (net nx62 
+      (joined 
+       (portRef Y (instanceRef ix63 ))
+       (portRef A0 (instanceRef ix65 ))))
+     (net nx64 
+      (joined 
+       (portRef Y (instanceRef ix65 ))
+       (portRef A1 (instanceRef ix149 ))
+       (portRef B1 (instanceRef ix231 ))))
+     (net nx78 
+      (joined 
+       (portRef Y (instanceRef ix79 ))
+       (portRef A1 (instanceRef ix83 ))))
+     (net nx82 
+      (joined 
+       (portRef Y (instanceRef ix83 ))
+       (portRef A0 (instanceRef ix85 ))))
+     (net nx84 
+      (joined 
+       (portRef Y (instanceRef ix85 ))
+       (portRef A1 (instanceRef ix151 ))
+       (portRef B1 (instanceRef ix217 ))))
+     (net nx102 
+      (joined 
+       (portRef Y (instanceRef ix103 ))
+       (portRef B0 (instanceRef ix109 ))))
+     (net nx108 
+      (joined 
+       (portRef Y (instanceRef ix109 ))
+       (portRef A0 (instanceRef ix111 ))))
+     (net nx110 
+      (joined 
+       (portRef Y (instanceRef ix111 ))
+       (portRef S0 (instanceRef ix198 ))))
+     (net nx118 
+      (joined 
+       (portRef Y (instanceRef ix119 ))
+       (portRef B0 (instanceRef ix217 ))))
+     (net nx122 
+      (joined 
+       (portRef Y (instanceRef ix123 ))
+       (portRef B0 (instanceRef ix231 ))))
+     (net nx126 
+      (joined 
+       (portRef Y (instanceRef ix127 ))
+       (portRef B0 (instanceRef ix243 ))))
+     (net nx142 
+      (joined 
+       (portRef Y (instanceRef ix143 ))
+       (portRef A1 (instanceRef ix145 ))))
+     (net nx197 
+      (joined 
+       (portRef Y (instanceRef ix198 ))
+       (portRef A0 (instanceRef ix151 ))
+       (portRef A (instanceRef ix119 ))))
+     (net nx199 
+      (joined 
+       (portRef Y (instanceRef ix200 ))
+       (portRef A0 (instanceRef ix198 ))
+       (portRef A1 (instanceRef ix111 ))))
+     (net nx201 
+      (joined 
+       (portRef Y (instanceRef ix202 ))
+       (portRef A1 (instanceRef ix231 ))
+       (portRef A1 (instanceRef ix240 ))
+       (portRef A1 (instanceRef ix243 ))))
+     (net nx206 
+      (joined 
+       (portRef Y (instanceRef ix207 ))
+       (portRef A0 (instanceRef ix103 ))))
+     (net nx213 
+      (joined 
+       (portRef Y (instanceRef ix214 ))
+       (portRef A1 (instanceRef ix85 ))))
+     (net nx216 
+      (joined 
+       (portRef Y (instanceRef ix217 ))
+       (portRef A0 (instanceRef ix149 ))
+       (portRef A (instanceRef ix123 ))))
+     (net nx222 
+      (joined 
+       (portRef Y (instanceRef ix223 ))
+       (portRef A0 (instanceRef ix59 ))
+       (portRef A1 (instanceRef ix237 ))))
+     (net nx224 
+      (joined 
+       (portRef Y (instanceRef ix225 ))
+       (portRef A0 (instanceRef ix223 ))))
+     (net nx227 
+      (joined 
+       (portRef Y (instanceRef ix228 ))
+       (portRef A1 (instanceRef ix65 ))))
+     (net nx230 
+      (joined 
+       (portRef Y (instanceRef ix231 ))
+       (portRef A0 (instanceRef ix147 ))
+       (portRef A (instanceRef ix127 ))))
+     (net nx236 
+      (joined 
+       (portRef Y (instanceRef ix237 ))
+       (portRef A0 (instanceRef ix39 ))
+       (portRef B0 (instanceRef ix247 ))))
+     (net nx239 
+      (joined 
+       (portRef Y (instanceRef ix240 ))
+       (portRef A1 (instanceRef ix45 ))))
+     (net nx242 
+      (joined 
+       (portRef Y (instanceRef ix243 ))
+       (portRef A0 (instanceRef ix145 ))))
+     (net nx246 
+      (joined 
+       (portRef Y (instanceRef ix247 ))
+       (portRef A0 (instanceRef ix143 ))))
+     (net nx248 
+      (joined 
+       (portRef Y (instanceRef ix249 ))
+       (portRef A1 (instanceRef ix247 ))))
+     (net nx255 
+      (joined 
+       (portRef Y (instanceRef ix254 ))
+       (portRef A2 (instanceRef ix103 ))
+       (portRef A0 (instanceRef ix79 ))
+       (portRef B0 (instanceRef ix223 ))))
+     (net nx257 
+      (joined 
+       (portRef Y (instanceRef ix256 ))
+       (portRef A1 (instanceRef ix198 ))
+       (portRef A1 (instanceRef ix200 ))
+       (portRef A0 (instanceRef ix109 ))
+       (portRef A1 (instanceRef ix103 ))
+       (portRef A1 (instanceRef ix214 ))
+       (portRef A1 (instanceRef ix217 ))
+       (portRef A1 (instanceRef ix228 ))))))))
+ (design alu (cellRef alu (libraryRef work ))))

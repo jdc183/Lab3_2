@@ -1,0 +1,87 @@
+/mgc/Leonardo/bin/Linux/spectrum 
+-------------------------------------------------
+LeonardoSpectrum Level 3 - 2009a.6 (Release Production Release, compiled Aug 17 2009 at 17:56:52)
+Copyright 1990-2009 Mentor Graphics.  All rights reserved.
+Portions copyright 1991-2009 Compuware Corporation
+
+Checking Security ...
+
+   *** Welcome to Interactive LeonardoSpectrum Level 3 Version 2009a.6 ***
+
+News :
+  * Enter "help" to get an overview of all commands
+  * Enter <command> -help  to get usage of each command
+
+Session history will be logged to file '/home/jdc183/EECS301/lab3_2/Vlog/Qreg/leospec.his'
+Reading library file `/mgc/Leonardo/lib/ami05_typ.syn`...
+Library version = 3.0 Release : Patch (a) : 09/13/04
+Delays assume: Process=typical Temp= 27.0 C  Voltage=5.00 V  
+Info: setting encoding to auto
+Info, Command 'load_library' finished successfully
+-- Reading file '/home/jdc183/EECS301/lab3_2/Vlog/Qreg/qreg.v'...
+-- Loading module 'qreg'
+-- Compiling root module 'qreg'
+"/home/jdc183/EECS301/lab3_2/Vlog/Qreg/qreg.v",line 14: Info, case choices are mutually exclusive; inferring parallel case.
+Info, Command 'read' finished successfully
+-- Boundary optimization.
+-- Start pre-optimization for design .work.qreg.INTERFACE
+Info, Command 'pre_optimize' finished successfully
+-- Start pre-optimization for design .work.qreg.INTERFACE
+Info, Command 'pre_optimize' finished successfully
+Info: The target technology was not selected, ami05_typ was automatically selected for you.
+-- Optimizing netlist .work.qreg.INTERFACE
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Final Design Rule Check..
+Info, Command 'optimize' finished successfully
+Info: The target technology was not selected, ami05_typ was automatically selected for you.
+-- Optimizing netlist .work.qreg.INTERFACE
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Final Design Rule Check..
+Info, Command 'optimize' finished successfully
+-- Start timing optimization for design .work.qreg.INTERFACE
+No critical paths to optimize at this level
+Info, Command 'optimize_timing' finished successfully
+Info: setting edif_write_arrays to FALSE
+FALSE
+-- Writing file Proc.vhd
+Info, Command 'write' finished successfully
+-- Writing file Proc.edf
+Info, Command 'write' finished successfully
+-- Writing file Proc.v
+Info, Command 'write' finished successfully
+-- Writing file Proc.sdf
+Info, Command 'write' finished successfully
+CriticalPath
+
+
+
+                        Critical Path Report
+
+Critical path #1, (unconstrained path)
+NAME                               GATE              ARRIVAL              LOAD
+------------------------------------------------------------------------------
+c1/                                            0.00  0.00 up             0.12
+ix244/Y                            inv02       0.16  0.16 dn             0.04
+ix242/Y                            nand02_2x   0.27  0.43 up             0.04
+ix9/Y                              oai21       0.73  1.16 dn             0.10
+ix199/Y                            mux21_ni    0.94  2.10 up             0.03
+reg_q(2)/D                         dff         0.00  2.10 up             0.00
+data arrival time                                    2.10
+
+
+data required time                                not specified
+------------------------------------------------------------------------------
+data required time                                not specified
+data arrival time                                    2.10
+                                                  ----------
+                                               unconstrained path
+------------------------------------------------------------------------------
+
+
+Info, Command 'report_delay' finished successfully
