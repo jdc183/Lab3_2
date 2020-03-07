@@ -6,12 +6,13 @@ reg	[3:0]	q;
 
 
 
-	parameter	Hold=2'b00, Load=2'b01;
+	parameter	Hold=1'b0, Load=1'b1;
 	
 	always @( posedge clk)
 	begin
 
 		case({c1})
+		Hold: ;
 		Load: q=ia;
 		endcase
 	end
