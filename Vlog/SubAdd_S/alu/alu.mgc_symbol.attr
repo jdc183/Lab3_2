@@ -1,0 +1,5 @@
+A 5 u mgc_symbol 5e6426c1480b.03.7f.00.01.01.00.04.d3 1 2 1 0
+V v 1 1 5e6426c1480b.03.7f.00.01.01.01.04.d3
+F f 1 "alu.smbl_1"
+O 1
+R csduv 0 "/home/jdc183/EECS301/lab3_2/Vlog/SubAdd_S/alu/part" 1 Eddm_part 5e6426c14860.03.7f.00.01.01.01.04.d3 5e6426c14860.03.7f.00.01.01.00.04.d3

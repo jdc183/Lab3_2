@@ -1,0 +1,45 @@
+# //  QuestaSim-64 6.5f Jun 16 2010 Linux 4.15.0-88-generic
+# //
+# //  Copyright 1991-2010 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# OpenFile testareg.v 
+vsim -voptargs=+acc work.testAreg
+# vsim -voptargs=+acc work.testAreg 
+# Loading work.testAreg
+# Loading work.areg
+add wave \
+{sim/:testAreg:q } 
+add wave \
+{sim/:testAreg:ia } 
+vsim -voptargs=+acc work.testAreg
+# vsim -voptargs=+acc work.testAreg 
+# Loading work.testAreg
+# Loading work.areg
+run -all
+# Break key hit 
+# Simulation stop requested.
+run -all
+# Break key hit 
+# Simulation stop requested.
+# Break key hit 
+add wave \
+{sim/:testAreg:clk } \
+{sim/:testAreg:c1 } \
+{sim/:testAreg:c2 } \
+{sim/:testAreg:ia } \
+{sim/:testAreg:ia[3] } \
+{sim/:testAreg:ia[2] } \
+{sim/:testAreg:ia[1] } \
+{sim/:testAreg:ia[0] } \
+{sim/:testAreg:q } \
+{sim/:testAreg:q[3] } \
+{sim/:testAreg:q[2] } \
+{sim/:testAreg:q[1] } \
+{sim/:testAreg:q[0] } 
+run

@@ -4,7 +4,7 @@
  (keywordMap (keywordLevel 0))
  (status 
   (written 
-   (timestamp 2020 02 28 18 32 25)
+   (timestamp 2020 03 07 23 38 07)
    (program "LeonardoSpectrum Level 3" (version "2009a.6"))
    (author "Mentor Graphics")))
  (external PRIMITIVES 
@@ -298,7 +298,8 @@
      (port (rename q_3_ "q(3)") (direction OUTPUT))
      (port (rename q_2_ "q(2)") (direction OUTPUT))
      (port (rename q_1_ "q(1)") (direction OUTPUT))
-     (port (rename q_0_ "q(0)") (direction OUTPUT)))
+     (port (rename q_0_ "q(0)") (direction OUTPUT))
+     (port q0 (direction OUTPUT)))
     (contents 
      (instance (rename reg_q_0_ "reg_q(0)") (viewRef NETLIST  (cellRef dff (libraryRef ami05_typ ))))
      (instance ix190 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
@@ -372,9 +373,10 @@
        (portRef Q (instanceRef reg_q_1_ ))
        (portRef A0 (instanceRef ix49 ))
        (portRef A1 (instanceRef ix180 ))))
-     (net (rename q_0_ "q(0)") 
+     (net q0 
       (joined 
        (portRef q_0_ )
+       (portRef q0 )
        (portRef Q (instanceRef reg_q_0_ ))
        (portRef A1 (instanceRef ix190 ))))
      (net nx20 

@@ -1,0 +1,4 @@
+START report: Sat Mar  7 17:21:24 2020 
+Warning: (eldo - 1615)  In file "./force_START0.cir" line 5:
++   COMMAND ".TRAN": Tstep can not be <= 0.0.
++   It is set to Tmax/20.0 = 5.000e-09 s.

@@ -1,0 +1,4 @@
+START report: Sat Mar  7 17:24:54 2020 
+Warning: (eldo - 1615)  In file "./EECS301/lab3_2/Vlog/Counter_S/counter/ami05a/counter_ami05a.cir" line 23:
++   COMMAND ".TRAN": Tstep can not be <= 0.0.
++   It is set to Tmax/20.0 = 5.000e-08 s.

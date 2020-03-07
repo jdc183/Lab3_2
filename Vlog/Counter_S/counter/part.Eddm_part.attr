@@ -1,0 +1,16 @@
+A 5 u Eddm_part 5e641ad4a88f.03.7f.00.01.01.00.62.6e 8 2 6 0
+V v 6 1 5e64244d2881.03.7f.00.01.01.00.77.10
+F f 6 "part.part_6"
+V v 7 1 5e64244d9340.03.7f.00.01.01.00.77.22
+F f 7 "part.part_7"
+V v 8 1 5e64244d9a02.03.7f.00.01.01.00.77.22
+F f 8 "part.part_8"
+O 8
+P "eddm__stream_to_use" "eddm__propl_dstream"
+R csduv 4 "/home/jdc183/EECS301/lab3_2/Vlog/Counter_S/counter/counter" 1 mgc_symbol 5e64244d92b9.03.7f.00.01.01.01.77.22 5e64244d92b9.03.7f.00.01.01.00.77.22
+R csduv 5 "/home/jdc183/EECS301/lab3_2/Vlog/Counter_S/counter/schematic" 1 mgc_schematic 5e64244d93a9.03.7f.00.01.01.01.77.22 5e64244d93a9.03.7f.00.01.01.00.77.22
+O 7
+P "eddm__stream_to_use" "eddm__propl_dstream"
+R csduv 4 "/home/jdc183/EECS301/lab3_2/Vlog/Counter_S/counter/counter" 1 mgc_symbol 5e64244d92b9.03.7f.00.01.01.01.77.22 5e64244d92b9.03.7f.00.01.01.00.77.22
+O 6
+P "eddm__stream_to_use" "eddm__propl_dstream"

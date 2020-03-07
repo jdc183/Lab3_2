@@ -1,0 +1,104 @@
+# This file provides name mapping information for all objects
+# on the schematic design.  It provides a mapping for each
+# object between its name on the schematic and its name in the netlist.
+version 1.0
+
+Globals
+   VDD VDD
+   GND GND
+End Globals
+
+Cell NMOS4
+   Pin D D
+   Pin G G
+   Pin S S
+   Pin B B
+End Cell
+
+Cell PMOS4
+   Pin D D
+   Pin G G
+   Pin S S
+   Pin B B
+End Cell
+
+Cell DFFS_NI
+   Pin QB QB
+   Pin Q Q
+   Pin CLK CLK
+   Pin D D
+   Pin S S
+   Net N$237 N$237
+   Net N$31 N$31
+   Net N$28 N$28
+   Net N$27 N$27
+   Net N$24 N$24
+   Net N$23 N$23
+   Net N$22 N$22
+   Net N$21 N$21
+   Net N$19 N$19
+   Net N$18 N$18
+   Net bclk- BCLK-
+   Net N$17 N$17
+   Net N$14 N$14
+   Net N$13 N$13
+   Net N$12 N$12
+   Net bclk BCLK
+   Net N$11 N$11
+   Net S S
+   Net D D
+   Net CLK CLK
+   Net Q Q
+   Net QB QB
+   Global GND GND
+   Global VDD VDD
+   Inst MN1 MN1 NMOS4
+   Inst MP1 MP1 PMOS4
+   Inst I$29 M_I$29 NMOS4
+   Inst I$45 M_I$45 NMOS4
+   Inst I$44 M_I$44 NMOS4
+   Inst I$43 M_I$43 NMOS4
+   Inst I$42 M_I$42 NMOS4
+   Inst I$41 M_I$41 NMOS4
+   Inst I$40 M_I$40 NMOS4
+   Inst I$39 M_I$39 PMOS4
+   Inst I$37 M_I$37 PMOS4
+   Inst I$36 M_I$36 NMOS4
+   Inst I$35 M_I$35 NMOS4
+   Inst I$34 M_I$34 NMOS4
+   Inst I$33 M_I$33 PMOS4
+   Inst I$26 M_I$26 PMOS4
+   Inst I$25 M_I$25 PMOS4
+   Inst I$24 M_I$24 PMOS4
+   Inst I$23 M_I$23 PMOS4
+   Inst I$22 M_I$22 PMOS4
+   Inst I$21 M_I$21 NMOS4
+   Inst I$19 M_I$19 PMOS4
+   Inst I$18 M_I$18 PMOS4
+   Inst I$16 M_I$16 NMOS4
+   Inst I$15 M_I$15 NMOS4
+   Inst I$14 M_I$14 NMOS4
+   Inst I$13 M_I$13 PMOS4
+   Inst I$12 M_I$12 NMOS4
+   Inst I$11 M_I$11 PMOS4
+   Inst I$10 M_I$10 PMOS4
+   Inst I$9 M_I$9 PMOS4
+   Inst I$8 M_I$8 NMOS4
+   Inst I$31 M_I$31 PMOS4
+   Inst I$4 M_I$4 PMOS4
+   Inst I$3 M_I$3 NMOS4
+   Inst I$1 M_I$1 PMOS4
+End Cell
+
+Cell #top#
+   Pin start START
+   Pin out OUT
+   Pin c C
+   Net $dummy[0] N$DUMMY_ESC1[0]
+   Net c C
+   Net out OUT
+   Net start START
+   Global GND GND
+   Inst reg_out X_REG_OUT DFFS_NI
+End Cell
+

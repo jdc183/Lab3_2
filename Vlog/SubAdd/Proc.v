@@ -1,6 +1,6 @@
 //
 // Verilog description for cell alu, 
-// Fri Feb 28 13:50:45 2020
+// Sat Mar  7 17:56:17 2020
 //
 // LeonardoSpectrum Level 3, 2009a.6 
 //
@@ -69,4 +69,5 @@ module alu ( c, ia, ib, sum, cout ) ;
     inv02 ix256 (.Y (nx257), .A (c)) ;
     nor02ii ix143 (.Y (nx142), .A0 (nx246), .A1 (c)) ;
 endmodule
+
 

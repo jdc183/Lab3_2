@@ -1,0 +1,10 @@
+A 5 u mgc_schematic 5e6430c4c796.03.7f.00.01.01.00.0d.8a 2 2 1 0
+V v 1 1 5e6430c4c796.03.7f.00.01.01.01.0d.8a
+F o 0 ""
+V v 2 1 5e6430c4d0bc.03.7f.00.01.01.00.0d.8a
+F o 0 ""
+O 2
+R cspuv 0 "/home/jdc183/EECS301/lab3_2/Vlog/Areg_S/areg/schematic/sheet1" 1 mgc_sheet 5e6430c4c7c0.03.7f.00.01.01.01.0d.8a 5e6430c4c7c0.03.7f.00.01.01.00.0d.8a
+O 1
+R cspuv 0 "/home/jdc183/EECS301/lab3_2/Vlog/Areg_S/areg/schematic/sheet1" 1 mgc_sheet 5e6430c4c7c0.03.7f.00.01.01.01.0d.8a 5e6430c4c7c0.03.7f.00.01.01.00.0d.8a
+P "eddm__refer_state" "eddm__refer_floating"

@@ -1,0 +1,12 @@
+A 5 u Eddm_part 5e6426c14860.03.7f.00.01.01.00.04.d3 2 2 2 0
+V v 1 1 5e6426c14860.03.7f.00.01.01.01.04.d3
+F f 1 "part.part_1"
+V v 2 1 5e6426c15556.03.7f.00.01.01.00.04.d3
+F f 2 "part.part_2"
+O 2
+P "eddm__stream_to_use" "eddm__propl_dstream"
+R csduv 0 "/home/jdc183/EECS301/lab3_2/Vlog/SubAdd_S/alu/alu" 1 mgc_symbol 5e6426c1480b.03.7f.00.01.01.01.04.d3 5e6426c1480b.03.7f.00.01.01.00.04.d3
+R csduv 1 "/home/jdc183/EECS301/lab3_2/Vlog/SubAdd_S/alu/schematic" 1 mgc_schematic 5e6426c148de.03.7f.00.01.01.01.04.d3 5e6426c148de.03.7f.00.01.01.00.04.d3
+O 1
+P "eddm__stream_to_use" "eddm__propl_dstream"
+R csduv 0 "/home/jdc183/EECS301/lab3_2/Vlog/SubAdd_S/alu/alu" 1 mgc_symbol 5e6426c1480b.03.7f.00.01.01.01.04.d3 5e6426c1480b.03.7f.00.01.01.00.04.d3

@@ -1,12 +1,12 @@
 //
 // Verilog description for cell qreg, 
-// Fri Feb 28 14:01:01 2020
+// Sat Mar  7 18:42:45 2020
 //
 // LeonardoSpectrum Level 3, 2009a.6 
 //
 
 
-module qreg ( clk, c1, c2, cin, ia, q ) ;
+module qreg ( clk, c1, c2, cin, ia, q, q0, q1 ) ;
 
     input clk ;
     input c1 ;
@@ -14,6 +14,8 @@ module qreg ( clk, c1, c2, cin, ia, q ) ;
     input cin ;
     input [3:0]ia ;
     output [4:0]q ;
+    output q0 ;
+    output q1 ;
 
     wire nx8, nx30, nx40, nx50, nx178, nx188, nx198, nx208, nx218, nx241, nx243, 
          nx250, nx252;
@@ -22,6 +24,8 @@ module qreg ( clk, c1, c2, cin, ia, q ) ;
 
 
 
+    assign q0 = q[0] ;
+    assign q1 = q[1] ;
     dff reg_q_0 (.Q (q[0]), .QB (\$dummy [0]), .D (nx218), .CLK (clk)) ;
     ao32 ix219 (.Y (nx218), .A0 (c1), .A1 (q[1]), .A2 (nx250), .B0 (q[0]), .B1 (
          nx252)) ;
@@ -42,5 +46,3 @@ module qreg ( clk, c1, c2, cin, ia, q ) ;
     inv02 ix251 (.Y (nx250), .A (c2)) ;
     inv02 ix253 (.Y (nx252), .A (nx8)) ;
 endmodule
-
-

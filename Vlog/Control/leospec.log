@@ -1,0 +1,95 @@
+/mgc/Leonardo/bin/Linux/spectrum 
+-------------------------------------------------
+LeonardoSpectrum Level 3 - 2009a.6 (Release Production Release, compiled Aug 17 2009 at 17:56:52)
+Copyright 1990-2009 Mentor Graphics.  All rights reserved.
+Portions copyright 1991-2009 Compuware Corporation
+
+Checking Security ...
+
+   *** Welcome to Interactive LeonardoSpectrum Level 3 Version 2009a.6 ***
+
+News :
+  * Enter "help" to get an overview of all commands
+  * Enter <command> -help  to get usage of each command
+
+Session history will be logged to file '/home/jdc183/EECS301/lab3_2/Vlog/Control/leospec.his'
+Reading library file `/mgc/Leonardo/lib/ami05_typ.syn`...
+Library version = 3.0 Release : Patch (a) : 09/13/04
+Delays assume: Process=typical Temp= 27.0 C  Voltage=5.00 V  
+Info: setting encoding to auto
+Info, Command 'load_library' finished successfully
+-- Reading file '/home/jdc183/EECS301/lab3_2/Vlog/Control/control.v'...
+-- Loading module 'control'
+-- Compiling root module 'control'
+"/home/jdc183/EECS301/lab3_2/Vlog/Control/control.v",line 13: Warning, PS should be present in the 'always' condition.
+"/home/jdc183/EECS301/lab3_2/Vlog/Control/control.v",line 40: Info, case choices are mutually exclusive; inferring parallel case.
+"/home/jdc183/EECS301/lab3_2/Vlog/Control/control.v",line 13: Info, case choices are mutually exclusive; inferring parallel case.
+"/home/jdc183/EECS301/lab3_2/Vlog/Control/control.v",line 5: Warning, alu is not always assigned. Storage may be needed..
+"/home/jdc183/EECS301/lab3_2/Vlog/Control/control.v",line 5: Warning, count is not always assigned. Storage may be needed..
+Info, Command 'read' finished successfully
+-- Boundary optimization.
+-- Start pre-optimization for design .work.control.INTERFACE
+Info, Command 'pre_optimize' finished successfully
+-- Start pre-optimization for design .work.control.INTERFACE
+Info, Command 'pre_optimize' finished successfully
+Info: The target technology was not selected, ami05_typ was automatically selected for you.
+-- Optimizing netlist .work.control.INTERFACE
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Final Design Rule Check..
+Info, Command 'optimize' finished successfully
+Info: The target technology was not selected, ami05_typ was automatically selected for you.
+-- Optimizing netlist .work.control.INTERFACE
+-- Matching combinational logic..
+-- Matching non-combinational logic..
+-- Covering..
+-- CPU Time used :   00:00 Mapping
+-- Final Design Rule Check..
+Info, Command 'optimize' finished successfully
+-- Start timing optimization for design .work.control.INTERFACE
+No critical paths to optimize at this level
+Info, Command 'optimize_timing' finished successfully
+Info: setting edif_write_arrays to FALSE
+FALSE
+-- Writing file Proc.vhd
+Info, Command 'write' finished successfully
+-- Writing file Proc.edf
+Info, Command 'write' finished successfully
+-- Writing file Proc.v
+Info, Command 'write' finished successfully
+-- Writing file Proc.sdf
+Info, Command 'write' finished successfully
+CriticalPath
+
+
+
+                        Critical Path Report
+
+Critical path #1, (unconstrained path)
+NAME                               GATE              ARRIVAL              LOAD
+------------------------------------------------------------------------------
+clock information not specified
+delay thru clock network                             0.00 (ideal)
+
+
+reg_PS(0)/Q                        dff         0.00  0.94 dn             0.05
+ix43/Y                             aoi21       0.20  1.14 up             0.01
+ix7/Y                              nor02ii     0.51  1.65 up             0.01
+ix9/Y                              ao21        0.44  2.09 up             0.01
+ix13/Y                             nor02ii     0.34  2.43 dn             0.03
+reg_PS(1)/D                        dff         0.00  2.43 dn             0.00
+data arrival time                                    2.43
+
+
+data required time                                not specified
+------------------------------------------------------------------------------
+data required time                                not specified
+data arrival time                                    2.43
+                                                  ----------
+                                               unconstrained path
+------------------------------------------------------------------------------
+
+
+Info, Command 'report_delay' finished successfully

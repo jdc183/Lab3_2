@@ -2,7 +2,7 @@
 -- 
 -- Definition of  areg
 -- 
---      Fri Feb 28 13:32:25 2020
+--      Sat Mar  7 18:38:07 2020
 --      
 --      LeonardoSpectrum Level 3, 2009a.6
 -- 
@@ -171,11 +171,12 @@ entity areg is
       c1 : IN std_logic ;
       c2 : IN std_logic ;
       ia : IN std_logic_vector (3 DOWNTO 0) ;
-      q : OUT std_logic_vector (3 DOWNTO 0)) ;
+      q : OUT std_logic_vector (3 DOWNTO 0) ;
+      q0 : OUT std_logic) ;
 end areg ;
 
 architecture INTERFACE of areg is
-   signal q_3_EXMPLR, q_2_EXMPLR, q_1_EXMPLR, q_0_EXMPLR, nx20, nx24, nx36, 
+   signal q_3_EXMPLR, q_2_EXMPLR, q_1_EXMPLR, q0_EXMPLR, nx20, nx24, nx36, 
       nx48, nx157, nx159, nx169, nx179, nx189, nx210, nx213, nx217: 
    std_logic ;
 
@@ -183,9 +184,10 @@ begin
    q(3) <= q_3_EXMPLR ;
    q(2) <= q_2_EXMPLR ;
    q(1) <= q_1_EXMPLR ;
-   q(0) <= q_0_EXMPLR ;
-   reg_q_0 : dff port map ( Q=>q_0_EXMPLR, QB=>OPEN, D=>nx189, CLK=>clk);
-   ix190 : mux21_ni port map ( Y=>nx189, A0=>nx48, A1=>q_0_EXMPLR, S0=>nx217
+   q(0) <= q0_EXMPLR ;
+   q0 <= q0_EXMPLR ;
+   reg_q_0 : dff port map ( Q=>q0_EXMPLR, QB=>OPEN, D=>nx189, CLK=>clk);
+   ix190 : mux21_ni port map ( Y=>nx189, A0=>nx48, A1=>q0_EXMPLR, S0=>nx217
    );
    ix49 : ao32 port map ( Y=>nx48, A0=>q_1_EXMPLR, A1=>nx210, A2=>c1, B0=>
       ia(0), B1=>nx20);

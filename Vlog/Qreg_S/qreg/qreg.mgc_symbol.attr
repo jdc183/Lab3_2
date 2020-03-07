@@ -1,0 +1,5 @@
+A 5 u mgc_symbol 5e64324571ed.03.7f.00.01.01.00.0f.d7 1 2 1 0
+V v 1 1 5e64324571ed.03.7f.00.01.01.01.0f.d7
+F f 1 "qreg.smbl_1"
+O 1
+R csduv 0 "/home/jdc183/EECS301/lab3_2/Vlog/Qreg_S/qreg/part" 4 Eddm_part 5e6432457278.03.7f.00.01.01.00.0f.d7 5e6425747a3e.03.7f.00.01.01.00.7b.4c

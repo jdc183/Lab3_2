@@ -1,0 +1,5 @@
+A 5 u mgc_symbol 5e64244d92b9.03.7f.00.01.01.00.77.22 1 2 1 0
+V v 1 1 5e64244d92b9.03.7f.00.01.01.01.77.22
+F f 1 "counter.smbl_1"
+O 1
+R csduv 0 "/home/jdc183/EECS301/lab3_2/Vlog/Counter_S/counter/part" 7 Eddm_part 5e64244d9340.03.7f.00.01.01.00.77.22 5e641ad4a88f.03.7f.00.01.01.00.62.6e

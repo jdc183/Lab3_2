@@ -21,7 +21,7 @@ Info, Command 'load_library' finished successfully
 LEONARDO{2}: LEONARDO{3}: LEONARDO{3}: -- Reading file '/home/jdc183/EECS301/lab3_2/Vlog/Qreg/qreg.v'...
 -- Loading module 'qreg'
 -- Compiling root module 'qreg'
-"/home/jdc183/EECS301/lab3_2/Vlog/Qreg/qreg.v",line 14: Info, case choices are mutually exclusive; inferring parallel case.
+"/home/jdc183/EECS301/lab3_2/Vlog/Qreg/qreg.v",line 16: Info, case choices are mutually exclusive; inferring parallel case.
 Info, Command 'read' finished successfully
 LEONARDO{4}: LEONARDO{4}: -- Boundary optimization.
 -- Start pre-optimization for design .work.qreg.INTERFACE
@@ -70,8 +70,8 @@ c1/                                            0.00  0.00 up             0.12
 ix244/Y                            inv02       0.16  0.16 dn             0.04
 ix242/Y                            nand02_2x   0.27  0.43 up             0.04
 ix9/Y                              oai21       0.73  1.16 dn             0.10
-ix199/Y                            mux21_ni    0.94  2.10 up             0.03
-reg_q(2)/D                         dff         0.00  2.10 up             0.00
+ix209/Y                            mux21_ni    0.94  2.10 up             0.03
+reg_q(1)/D                         dff         0.00  2.10 up             0.00
 data arrival time                                    2.10
 
 

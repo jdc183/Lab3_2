@@ -4,10 +4,10 @@ K3
 cModel Technology
 Z0 d/home/jdc183/EECS301/lab3_2/Vlog/Areg
 vareg
-!s100 Xb35RzaMUcK[CjKCcXWZT1
-IIkbQAP@h1zCc`^;STYzW@0
-V2Tk:^BGaYi>`aGic?nXAM2
-w1582914720
+!s100 DS;=18^nVlFaT9f;Y=UXS0
+IBG]S6i7KzRAj3QEz^14I71
+VmU=cDW1gWCe5LL[X43bhm2
+w1583624253
 Z1 8areg.v
 Z2 Fareg.v
 L0 1
@@ -28,4 +28,32 @@ r1
 31
 R4
 !s100 MLzH3:HU02a<;3b3B<j=f3
+!s85 0
+vtestAreg
+I?TU7E_@AZV;NFFXC5=fGZ2
+V6G[DJPSIM=NIE6KZA^T8K3
+w1583614690
+Z5 8testareg.v
+Z6 Ftestareg.v
+L0 1
+R3
+r1
+31
+R4
+ntest@areg
+!s100 M?7D31H6ah_z[AmUzgTHa1
+!s85 0
+vtestMreg
+I9V`[SCN9@ZT9SdTR?]K5T3
+Vn1AQmPATN`]e1Q3I7=ITT1
+w1583614240
+R5
+R6
+L0 1
+R3
+r1
+31
+R4
+ntest@mreg
+!s100 :]_el2PKZ_i59N?c>dbKc3
 !s85 0

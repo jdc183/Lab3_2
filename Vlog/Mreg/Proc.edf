@@ -4,7 +4,7 @@
  (keywordMap (keywordLevel 0))
  (status 
   (written 
-   (timestamp 2020 02 28 18 33 14)
+   (timestamp 2020 03 07 22 52 09)
    (program "LeonardoSpectrum Level 3" (version "2009a.6"))
    (author "Mentor Graphics")))
  (external PRIMITIVES 
@@ -140,13 +140,13 @@
      (port (rename q_0_ "q(0)") (direction OUTPUT)))
     (contents 
      (instance (rename reg_q_0_ "reg_q(0)") (viewRef NETLIST  (cellRef dff (libraryRef ami05_typ ))))
-     (instance ix116 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
+     (instance ix128 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
      (instance (rename reg_q_1_ "reg_q(1)") (viewRef NETLIST  (cellRef dff (libraryRef ami05_typ ))))
-     (instance ix126 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
+     (instance ix138 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
      (instance (rename reg_q_2_ "reg_q(2)") (viewRef NETLIST  (cellRef dff (libraryRef ami05_typ ))))
-     (instance ix136 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
+     (instance ix148 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
      (instance (rename reg_q_3_ "reg_q(3)") (viewRef NETLIST  (cellRef dff (libraryRef ami05_typ ))))
-     (instance ix146 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
+     (instance ix158 (viewRef NETLIST  (cellRef mux21_ni (libraryRef ami05_typ ))))
      (net clk 
       (joined 
        (portRef clk )
@@ -157,60 +157,60 @@
      (net c1 
       (joined 
        (portRef c1 )
-       (portRef S0 (instanceRef ix116 ))
-       (portRef S0 (instanceRef ix126 ))
-       (portRef S0 (instanceRef ix136 ))
-       (portRef S0 (instanceRef ix146 ))))
+       (portRef S0 (instanceRef ix128 ))
+       (portRef S0 (instanceRef ix138 ))
+       (portRef S0 (instanceRef ix148 ))
+       (portRef S0 (instanceRef ix158 ))))
      (net (rename ia_3_ "ia(3)") 
       (joined 
        (portRef ia_3_ )
-       (portRef A1 (instanceRef ix146 ))))
+       (portRef A1 (instanceRef ix158 ))))
      (net (rename ia_2_ "ia(2)") 
       (joined 
        (portRef ia_2_ )
-       (portRef A1 (instanceRef ix136 ))))
+       (portRef A1 (instanceRef ix148 ))))
      (net (rename ia_1_ "ia(1)") 
       (joined 
        (portRef ia_1_ )
-       (portRef A1 (instanceRef ix126 ))))
+       (portRef A1 (instanceRef ix138 ))))
      (net (rename ia_0_ "ia(0)") 
       (joined 
        (portRef ia_0_ )
-       (portRef A1 (instanceRef ix116 ))))
+       (portRef A1 (instanceRef ix128 ))))
      (net (rename q_3_ "q(3)") 
       (joined 
        (portRef q_3_ )
        (portRef Q (instanceRef reg_q_3_ ))
-       (portRef A0 (instanceRef ix146 ))))
+       (portRef A0 (instanceRef ix158 ))))
      (net (rename q_2_ "q(2)") 
       (joined 
        (portRef q_2_ )
        (portRef Q (instanceRef reg_q_2_ ))
-       (portRef A0 (instanceRef ix136 ))))
+       (portRef A0 (instanceRef ix148 ))))
      (net (rename q_1_ "q(1)") 
       (joined 
        (portRef q_1_ )
        (portRef Q (instanceRef reg_q_1_ ))
-       (portRef A0 (instanceRef ix126 ))))
+       (portRef A0 (instanceRef ix138 ))))
      (net (rename q_0_ "q(0)") 
       (joined 
        (portRef q_0_ )
        (portRef Q (instanceRef reg_q_0_ ))
-       (portRef A0 (instanceRef ix116 ))))
-     (net nx115 
+       (portRef A0 (instanceRef ix128 ))))
+     (net nx127 
       (joined 
-       (portRef Y (instanceRef ix116 ))
+       (portRef Y (instanceRef ix128 ))
        (portRef D (instanceRef reg_q_0_ ))))
-     (net nx125 
+     (net nx137 
       (joined 
-       (portRef Y (instanceRef ix126 ))
+       (portRef Y (instanceRef ix138 ))
        (portRef D (instanceRef reg_q_1_ ))))
-     (net nx135 
+     (net nx147 
       (joined 
-       (portRef Y (instanceRef ix136 ))
+       (portRef Y (instanceRef ix148 ))
        (portRef D (instanceRef reg_q_2_ ))))
-     (net nx145 
+     (net nx157 
       (joined 
-       (portRef Y (instanceRef ix146 ))
+       (portRef Y (instanceRef ix158 ))
        (portRef D (instanceRef reg_q_3_ ))))))))
  (design mreg (cellRef mreg (libraryRef work ))))

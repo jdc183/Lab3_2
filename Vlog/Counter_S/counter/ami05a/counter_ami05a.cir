@@ -1,0 +1,23 @@
+* Component: /home/jdc183/EECS301/lab3_2/Vlog/Counter_S/counter  Viewpoint: ami05a
+.INCLUDE /home/jdc183/EECS301/lab3_2/Vlog/Counter_S/counter/ami05a/counter_ami05a.spi
+.INCLUDE /mgc/adk3_1/technology/ic/models/VDD_5.mod
+.INCLUDE /mgc/adk3_1/technology/ic/models/ami05.mod
+.PROBE TRAN V(OUT)
+.PROBE TRAN V(C)
+.PROBE TRAN V(START)
+
+VFORCE__START START GND pulse (0 5 10e-9 1e-09 1e-09 5e-06 5e-06)
+
+VFORCE__C C GND pulse (0 5 20e-9 1e-09 1e-09 5e-08 1e-07)
+
+
+
+
+.OPTION NOASCII
+.OPTION MODWL
+.OPTION ENGNOT
+.OPTION AEX
+
+.TEMP 27 
+
+.TRAN  0 1000N 0 

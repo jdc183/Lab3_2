@@ -2,7 +2,7 @@
 -- 
 -- Definition of  mreg
 -- 
---      Fri Feb 28 13:33:14 2020
+--      Sat Mar  7 17:52:09 2020
 --      
 --      LeonardoSpectrum Level 3, 2009a.6
 -- 
@@ -80,22 +80,22 @@ entity mreg is
 end mreg ;
 
 architecture INTERFACE of mreg is
-   signal q_3_EXMPLR, q_2_EXMPLR, q_1_EXMPLR, q_0_EXMPLR, nx115, nx125, 
-      nx135, nx145: std_logic ;
+   signal q_3_EXMPLR, q_2_EXMPLR, q_1_EXMPLR, q_0_EXMPLR, nx127, nx137, 
+      nx147, nx157: std_logic ;
 
 begin
    q(3) <= q_3_EXMPLR ;
    q(2) <= q_2_EXMPLR ;
    q(1) <= q_1_EXMPLR ;
    q(0) <= q_0_EXMPLR ;
-   reg_q_0 : dff port map ( Q=>q_0_EXMPLR, QB=>OPEN, D=>nx115, CLK=>clk);
-   ix116 : mux21_ni port map ( Y=>nx115, A0=>q_0_EXMPLR, A1=>ia(0), S0=>c1);
-   reg_q_1 : dff port map ( Q=>q_1_EXMPLR, QB=>OPEN, D=>nx125, CLK=>clk);
-   ix126 : mux21_ni port map ( Y=>nx125, A0=>q_1_EXMPLR, A1=>ia(1), S0=>c1);
-   reg_q_2 : dff port map ( Q=>q_2_EXMPLR, QB=>OPEN, D=>nx135, CLK=>clk);
-   ix136 : mux21_ni port map ( Y=>nx135, A0=>q_2_EXMPLR, A1=>ia(2), S0=>c1);
-   reg_q_3 : dff port map ( Q=>q_3_EXMPLR, QB=>OPEN, D=>nx145, CLK=>clk);
-   ix146 : mux21_ni port map ( Y=>nx145, A0=>q_3_EXMPLR, A1=>ia(3), S0=>c1);
+   reg_q_0 : dff port map ( Q=>q_0_EXMPLR, QB=>OPEN, D=>nx127, CLK=>clk);
+   ix128 : mux21_ni port map ( Y=>nx127, A0=>q_0_EXMPLR, A1=>ia(0), S0=>c1);
+   reg_q_1 : dff port map ( Q=>q_1_EXMPLR, QB=>OPEN, D=>nx137, CLK=>clk);
+   ix138 : mux21_ni port map ( Y=>nx137, A0=>q_1_EXMPLR, A1=>ia(1), S0=>c1);
+   reg_q_2 : dff port map ( Q=>q_2_EXMPLR, QB=>OPEN, D=>nx147, CLK=>clk);
+   ix148 : mux21_ni port map ( Y=>nx147, A0=>q_2_EXMPLR, A1=>ia(2), S0=>c1);
+   reg_q_3 : dff port map ( Q=>q_3_EXMPLR, QB=>OPEN, D=>nx157, CLK=>clk);
+   ix158 : mux21_ni port map ( Y=>nx157, A0=>q_3_EXMPLR, A1=>ia(3), S0=>c1);
 
 end INTERFACE ;
 

@@ -1,18 +1,19 @@
 //
 // Verilog description for cell areg, 
-// Fri Feb 28 13:32:25 2020
+// Sat Mar  7 18:38:07 2020
 //
 // LeonardoSpectrum Level 3, 2009a.6 
 //
 
 
-module areg ( clk, c1, c2, ia, q ) ;
+module areg ( clk, c1, c2, ia, q, q0 ) ;
 
     input clk ;
     input c1 ;
     input c2 ;
     input [3:0]ia ;
     output [3:0]q ;
+    output q0 ;
 
     wire nx20, nx24, nx36, nx48, nx157, nx159, nx169, nx179, nx189, nx210, nx213, 
          nx217;
@@ -21,6 +22,7 @@ module areg ( clk, c1, c2, ia, q ) ;
 
 
 
+    assign q0 = q[0] ;
     dff reg_q_0 (.Q (q[0]), .QB (\$dummy [0]), .D (nx189), .CLK (clk)) ;
     mux21_ni ix190 (.Y (nx189), .A0 (nx48), .A1 (q[0]), .S0 (nx217)) ;
     ao32 ix49 (.Y (nx48), .A0 (q[1]), .A1 (nx210), .A2 (c1), .B0 (ia[0]), .B1 (

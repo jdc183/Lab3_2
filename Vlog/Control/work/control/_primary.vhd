@@ -16,12 +16,12 @@ entity control is
         c1              : in     vl_logic;
         c2              : in     vl_logic;
         start           : in     vl_logic;
-        q1              : out    vl_logic_vector(1 downto 0);
-        q2              : out    vl_logic_vector(1 downto 0);
-        a1              : out    vl_logic_vector(1 downto 0);
-        a2              : out    vl_logic_vector(1 downto 0);
-        m1              : out    vl_logic_vector(1 downto 0);
-        alu             : out    vl_logic_vector(1 downto 0);
-        count           : out    vl_logic_vector(1 downto 0)
+        q1              : out    vl_logic;
+        q2              : out    vl_logic;
+        a1              : out    vl_logic;
+        a2              : out    vl_logic;
+        m1              : out    vl_logic;
+        alu             : out    vl_logic;
+        count           : out    vl_logic
     );
 end control;

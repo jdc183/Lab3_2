@@ -2,7 +2,7 @@
 -- 
 -- Definition of  qreg
 -- 
---      Fri Feb 28 14:01:01 2020
+--      Sat Mar  7 18:42:45 2020
 --      
 --      LeonardoSpectrum Level 3, 2009a.6
 -- 
@@ -156,11 +156,13 @@ entity qreg is
       c2 : IN std_logic ;
       cin : IN std_logic ;
       ia : IN std_logic_vector (3 DOWNTO 0) ;
-      q : OUT std_logic_vector (4 DOWNTO 0)) ;
+      q : OUT std_logic_vector (4 DOWNTO 0) ;
+      q0 : OUT std_logic ;
+      q1 : OUT std_logic) ;
 end qreg ;
 
 architecture INTERFACE of qreg is
-   signal q_4_EXMPLR, q_3_EXMPLR, q_2_EXMPLR, q_1_EXMPLR, q_0_EXMPLR, nx8, 
+   signal q_4_EXMPLR, q_3_EXMPLR, q_2_EXMPLR, q1_EXMPLR, q0_EXMPLR, nx8, 
       nx30, nx40, nx50, nx178, nx188, nx198, nx208, nx218, nx241, nx243, 
       nx250, nx252: std_logic ;
 
@@ -168,13 +170,15 @@ begin
    q(4) <= q_4_EXMPLR ;
    q(3) <= q_3_EXMPLR ;
    q(2) <= q_2_EXMPLR ;
-   q(1) <= q_1_EXMPLR ;
-   q(0) <= q_0_EXMPLR ;
-   reg_q_0 : dff port map ( Q=>q_0_EXMPLR, QB=>OPEN, D=>nx218, CLK=>clk);
-   ix219 : ao32 port map ( Y=>nx218, A0=>c1, A1=>q_1_EXMPLR, A2=>nx250, B0=>
-      q_0_EXMPLR, B1=>nx252);
-   reg_q_1 : dff port map ( Q=>q_1_EXMPLR, QB=>OPEN, D=>nx208, CLK=>clk);
-   ix209 : mux21_ni port map ( Y=>nx208, A0=>q_1_EXMPLR, A1=>nx50, S0=>nx8);
+   q(1) <= q1_EXMPLR ;
+   q(0) <= q0_EXMPLR ;
+   q0 <= q0_EXMPLR ;
+   q1 <= q1_EXMPLR ;
+   reg_q_0 : dff port map ( Q=>q0_EXMPLR, QB=>OPEN, D=>nx218, CLK=>clk);
+   ix219 : ao32 port map ( Y=>nx218, A0=>c1, A1=>q1_EXMPLR, A2=>nx250, B0=>
+      q0_EXMPLR, B1=>nx252);
+   reg_q_1 : dff port map ( Q=>q1_EXMPLR, QB=>OPEN, D=>nx208, CLK=>clk);
+   ix209 : mux21_ni port map ( Y=>nx208, A0=>q1_EXMPLR, A1=>nx50, S0=>nx8);
    ix51 : mux21_ni port map ( Y=>nx50, A0=>ia(0), A1=>q_2_EXMPLR, S0=>c1);
    reg_q_2 : dff port map ( Q=>q_2_EXMPLR, QB=>OPEN, D=>nx198, CLK=>clk);
    ix199 : mux21_ni port map ( Y=>nx198, A0=>q_2_EXMPLR, A1=>nx40, S0=>nx8);

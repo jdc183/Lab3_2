@@ -21,7 +21,7 @@ Info, Command 'load_library' finished successfully
 LEONARDO{2}: LEONARDO{3}: LEONARDO{3}: -- Reading file '/home/jdc183/EECS301/lab3_2/Vlog/Areg/areg.v'...
 -- Loading module 'areg'
 -- Compiling root module 'areg'
-"/home/jdc183/EECS301/lab3_2/Vlog/Areg/areg.v",line 14: Info, case choices are mutually exclusive; inferring parallel case.
+"/home/jdc183/EECS301/lab3_2/Vlog/Areg/areg.v",line 16: Info, case choices are mutually exclusive; inferring parallel case.
 Info, Command 'read' finished successfully
 LEONARDO{4}: LEONARDO{4}: -- Boundary optimization.
 -- Start pre-optimization for design .work.areg.INTERFACE

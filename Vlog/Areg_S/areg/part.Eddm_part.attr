@@ -1,0 +1,16 @@
+A 5 u Eddm_part 5e6424fa7d00.03.7f.00.01.01.00.79.49 5 2 4 0
+V v 3 1 5e6430c43eec.03.7f.00.01.01.00.0d.78
+F f 3 "part.part_3"
+V v 4 1 5e6430c4c721.03.7f.00.01.01.00.0d.8a
+F f 4 "part.part_4"
+V v 5 1 5e6430c4d086.03.7f.00.01.01.00.0d.8a
+F f 5 "part.part_5"
+O 5
+P "eddm__stream_to_use" "eddm__propl_dstream"
+R csduv 2 "/home/jdc183/EECS301/lab3_2/Vlog/Areg_S/areg/areg" 1 mgc_symbol 5e6430c4c699.03.7f.00.01.01.01.0d.8a 5e6430c4c699.03.7f.00.01.01.00.0d.8a
+R csduv 3 "/home/jdc183/EECS301/lab3_2/Vlog/Areg_S/areg/schematic" 1 mgc_schematic 5e6430c4c796.03.7f.00.01.01.01.0d.8a 5e6430c4c796.03.7f.00.01.01.00.0d.8a
+O 4
+P "eddm__stream_to_use" "eddm__propl_dstream"
+R csduv 2 "/home/jdc183/EECS301/lab3_2/Vlog/Areg_S/areg/areg" 1 mgc_symbol 5e6430c4c699.03.7f.00.01.01.01.0d.8a 5e6430c4c699.03.7f.00.01.01.00.0d.8a
+O 3
+P "eddm__stream_to_use" "eddm__propl_dstream"

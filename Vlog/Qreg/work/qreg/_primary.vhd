@@ -12,6 +12,8 @@ entity qreg is
         c2              : in     vl_logic;
         cin             : in     vl_logic;
         ia              : in     vl_logic_vector(3 downto 0);
-        q               : out    vl_logic_vector(4 downto 0)
+        q               : out    vl_logic_vector(4 downto 0);
+        q0              : out    vl_logic;
+        q1              : out    vl_logic
     );
 end qreg;

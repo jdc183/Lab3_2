@@ -1,0 +1,56 @@
+* ELDO netlist generated with ICnet by 'jdc183' on Sat Mar  7 2020 at 17:24:54
+
+*
+* Globals.
+*
+.global VDD GND
+
+*
+* Component pathname : $ADK/parts/dffs_ni
+*
+.subckt DFFS_NI  QB Q CLK D S
+
+        MN1 N$237 S GND GND n L=0.6u W=3u
+        MP1 N$237 S VDD VDD p L=0.6u W=5.4u
+        M_I$29 BCLK- CLK GND GND n L=0.6u W=3u
+        M_I$45 N$12 BCLK- N$28 GND n L=0.6u W=1.5u
+        M_I$44 N$18 BCLK N$22 GND n L=0.6u W=1.5u
+        M_I$43 N$31 N$27 GND GND n L=0.6u W=1.5u
+        M_I$42 N$23 N$237 GND GND n L=0.6u W=3u
+        M_I$41 N$27 N$12 GND GND n L=0.6u W=1.5u
+        M_I$40 N$13 N$14 GND GND n L=0.6u W=4.5u
+        M_I$39 N$28 N$27 VDD VDD p L=0.6u W=1.5u
+        M_I$37 N$17 D VDD VDD p L=0.6u W=8.1u
+        M_I$36 N$19 D GND GND n L=0.6u W=4.5u
+        M_I$35 N$18 BCLK- N$19 GND n L=0.6u W=4.5u
+        M_I$34 N$14 N$24 GND GND n L=0.6u W=3u
+        M_I$33 N$14 N$24 VDD VDD p L=0.6u W=5.4u
+        M_I$26 BCLK- CLK VDD VDD p L=0.6u W=5.4u
+        M_I$25 N$28 N$237 VDD VDD p L=0.6u W=1.5u
+        M_I$24 N$11 N$14 VDD VDD p L=0.6u W=8.1u
+        M_I$23 N$12 BCLK- N$11 VDD p L=0.6u W=8.1u
+        M_I$22 N$27 N$12 VDD VDD p L=0.6u W=1.5u
+        M_I$21 N$12 BCLK N$13 GND n L=0.6u W=4.5u
+        M_I$19 N$18 BCLK N$17 VDD p L=0.6u W=8.1u
+        M_I$18 Q QB VDD VDD p L=0.6u W=5.4u
+        M_I$16 BCLK BCLK- GND GND n L=0.6u W=3u
+        M_I$15 Q QB GND GND n L=0.6u W=3u
+        M_I$14 N$28 N$237 N$31 GND n L=0.6u W=1.5u
+        M_I$13 N$21 N$24 VDD VDD p L=0.6u W=1.5u
+        M_I$12 N$22 N$24 GND GND n L=0.6u W=1.5u
+        M_I$11 N$24 N$18 VDD VDD p L=0.6u W=3.6u
+        M_I$10 N$18 BCLK- N$21 VDD p L=0.6u W=1.5u
+        M_I$9 N$24 N$237 VDD VDD p L=0.6u W=3.6u
+        M_I$8 N$24 N$18 N$23 GND n L=0.6u W=3u
+        M_I$31 BCLK BCLK- VDD VDD p L=0.6u W=5.4u
+        M_I$4 QB N$12 VDD VDD p L=0.6u W=5.4u
+        M_I$3 QB N$12 GND GND n L=0.6u W=3u
+        M_I$1 N$12 BCLK N$28 VDD p L=0.6u W=1.5u
+.ends DFFS_NI
+
+*
+* MAIN CELL: Component pathname : /home/jdc183/EECS301/lab3_2/Vlog/Counter_S/counter
+*
+        X_REG_OUT N$DUMMY_ESC1[0] OUT START GND C DFFS_NI
+*
+.end

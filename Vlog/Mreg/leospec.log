@@ -71,7 +71,7 @@ delay thru clock network                             0.00 (ideal)
 
 
 reg_q(3)/Q                         dff         0.00  0.86 dn             0.02
-ix146/Y                            mux21_ni    0.63  1.49 dn             0.03
+ix158/Y                            mux21_ni    0.63  1.49 dn             0.03
 reg_q(3)/D                         dff         0.00  1.49 dn             0.00
 data arrival time                                    1.49
 

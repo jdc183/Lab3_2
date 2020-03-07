@@ -1,0 +1,16 @@
+A 5 u Eddm_part 5e6425747a3e.03.7f.00.01.01.00.7b.4c 5 2 4 0
+V v 3 1 5e6432450641.03.7f.00.01.01.00.0f.c5
+F f 3 "part.part_3"
+V v 4 1 5e6432457278.03.7f.00.01.01.00.0f.d7
+F f 4 "part.part_4"
+V v 5 1 5e6432457b8b.03.7f.00.01.01.00.0f.d7
+F f 5 "part.part_5"
+O 5
+P "eddm__stream_to_use" "eddm__propl_dstream"
+R csduv 2 "/home/jdc183/EECS301/lab3_2/Vlog/Qreg_S/qreg/qreg" 1 mgc_symbol 5e64324571ed.03.7f.00.01.01.01.0f.d7 5e64324571ed.03.7f.00.01.01.00.0f.d7
+R csduv 3 "/home/jdc183/EECS301/lab3_2/Vlog/Qreg_S/qreg/schematic" 1 mgc_schematic 5e64324572e9.03.7f.00.01.01.01.0f.d7 5e64324572e9.03.7f.00.01.01.00.0f.d7
+O 4
+P "eddm__stream_to_use" "eddm__propl_dstream"
+R csduv 2 "/home/jdc183/EECS301/lab3_2/Vlog/Qreg_S/qreg/qreg" 1 mgc_symbol 5e64324571ed.03.7f.00.01.01.01.0f.d7 5e64324571ed.03.7f.00.01.01.00.0f.d7
+O 3
+P "eddm__stream_to_use" "eddm__propl_dstream"
