@@ -11,6 +11,7 @@ reg q1, q2, a1, a2, m1, alu, count;
 	always @(c1 or c2 or start)
 	if(start == 0)
 		PS = 2'b00;
+		count = 0;
 
 	case ({PS})
 	    S0: 
@@ -29,7 +30,7 @@ reg q1, q2, a1, a2, m1, alu, count;
 		NS = S1;
 		q1 = 1'b0;
 		q2 = 1'b1;
-		a1 = 1'b1;
+		a1 = 1'b0;
 		a2 = 1'b1;
 		m1 = 1'b1;
 		
@@ -38,7 +39,7 @@ reg q1, q2, a1, a2, m1, alu, count;
 	    
 	    S1://interpret c1 and c2 to determine addition or subtraction
 	    begin
-
+	       count = 1'b0;
 	       case({c1,c2})
 	       Add: begin
 			alu = 1'b0;
